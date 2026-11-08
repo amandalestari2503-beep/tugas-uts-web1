@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-atas">
+    <h1>Toko Buku Online</h1>
+    <a href="dashboard.html" class="btn-keluar">&larr; Dashboard</a>
+  </header>
+
+  <main class="konten">
+    <section class="sambutan">
+      <h2>Pemesanan Buku</h2>
+      <p>Pilih buku, atur jumlahnya, lalu lengkapi data pemesan dan pembayaran.</p>
+    </section>
+
+    <section class="kotak-form" aria-labelledby="judulPilih">
+      <h3 id="judulPilih">Pilih Buku</h3>
+
+      <form id="formItem" class="form-cari" novalidate>
+        <div>
+          <label for="pilihBuku">Buku</label>
+          <select id="pilihBuku">
+            <option value="">-- Pilih buku --</option>
+          </select>
+        </div>
+        <div>
+          <label for="jumlahBuku">Jumlah</label>
+          <input type="number" id="jumlahBuku" min="1" value="1">
+        </div>
+        <button type="submit" class="btn-utama">Tambah ke Pesanan</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="judulPesanan">
+      <h3 id="judulPesanan">Data Pemesanan</h3>
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Nama Buku</th>
+              <th>Harga</th>
+              <th>Jumlah</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyPesanan"></tbody>
+          <tfoot>
+            <tr>
+              <th colspan="4">Total Bayar</th>
+              <th colspan="2" id="totalBayar">Rp 0</th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="kotak-form kotak-atas" aria-labelledby="judulPemesan">
+      <h3 id="judulPemesan">Data Pemesan &amp; Pembayaran</h3>
+      <form id="formCheckout" class="form-grid" novalidate>
+        <div>
+          <label for="namaPemesan">Nama Pemesan</label>
+          <input type="text" id="namaPemesan">
+        </div>
+        <div>
+          <label for="emailPemesan">Email</label>
+          <input type="email" id="emailPemesan">
+        </div>
+        <div>
+          <label for="telpPemesan">No. Telepon</label>
+          <input type="tel" id="telpPemesan" placeholder="mis. 081234567890">
+        </div>
+        <div>
+          <label for="ekspedisi">Ekspedisi</label>
+          <select id="ekspedisi">
+            <option value="">-- Pilih ekspedisi --</option>
+            <option value="JNE">JNE</option>
+            <option value="Pos Indonesia">Pos Indonesia</option>
+            <option value="J&amp;T">J&amp;T</option>
+          </select>
+        </div>
+        <div>
+          <label for="metodeBayar">Metode Pembayaran</label>
+          <select id="metodeBayar">
+            <option value="">-- Pilih metode --</option>
+            <option value="Transfer Bank">Transfer Bank</option>
+            <option value="E-Wallet">E-Wallet</option>
+            <option value="Kartu Kredit">Kartu Kredit</option>
+            <option value="Bayar di Tempat (COD)">Bayar di Tempat (COD)</option>
+          </select>
+        </div>
+        <div class="kolom-penuh">
+          <label for="alamat">Alamat Pengiriman</label>
+          <textarea id="alamat" rows="3"></textarea>
+        </div>
+        <div class="form-tombol kolom-penuh">
+          <button type="submit" class="btn-utama">Buat Pesanan</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal pesanan berhasil -->
+  <div class="modal" id="modalSukses">
+    <div class="modal-isi">
+      <button type="button" class="modal-tutup" data-tutup="modalSukses">&times;</button>
+      <h2>Pesanan Berhasil!</h2>
+      <p>Nomor Delivery Order kamu:</p>
+      <p class="nomor-do" id="nomorDOBaru"></p>
+      <p>Simpan nomor ini untuk melacak pengiriman.</p>
+      <a href="tracking.html" class="btn-utama tombol-link">Lacak Pesanan</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

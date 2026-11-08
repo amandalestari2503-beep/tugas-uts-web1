@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-atas">
+    <h1>Toko Buku Online</h1>
+    <button type="button" id="btnLogout" class="btn-keluar">Logout</button>
+  </header>
+
+  <main class="konten">
+    <section class="sambutan">
+      <h2 id="greeting">Selamat datang</h2>
+      <!-- TAMBAHKAN BARIS INI UNTUK JAM & TANGGAL -->
+      <p id="infoWaktu" style="color: #4b5563; font-weight: 600; margin-top: 4px; margin-bottom: 8px;"></p>
+      <p>Pilih menu di bawah untuk melanjutkan.</p>
+    </section>
+
+    <nav class="menu-grid" aria-label="Menu utama">
+      <a href="stok.html" class="kartu-menu">
+        <h3>Informasi Stok</h3>
+        <p>Lihat katalog dan stok buku</p>
+      </a>
+      <a href="tracking.html" class="kartu-menu">
+        <h3>Tracking Pengiriman</h3>
+        <p>Cari status pengiriman</p>
+      </a>
+      <a href="checkout.html" class="kartu-menu">
+        <h3>Laporan Pemesanan</h3>
+        <p>Buat dan kelola pemesanan</p>
+      </a>
+      <button type="button" id="btnHistory" class="kartu-menu">
+        <h3>History Transaksi</h3>
+        <p>Riwayat transaksi pesanan</p>
+      </button>
+    </nav>
+  </main>
+
+  <!-- Modal History -->
+  <div class="modal" id="modalHistory">
+    <div class="modal-isi modal-lebar">
+      <button type="button" class="modal-tutup" data-tutup="modalHistory">&times;</button>
+      <h2>History Transaksi</h2>
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No. DO</th>
+              <th>Nama</th>
+              <th>Ekspedisi</th>
+              <th>Tanggal Kirim</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tabelHistory"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

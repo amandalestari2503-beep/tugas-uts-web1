@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-atas">
+    <h1>Toko Buku Online</h1>
+    <a href="dashboard.html" class="btn-keluar">&larr; Dashboard</a>
+  </header>
+
+  <main class="konten">
+    <section class="sambutan">
+      <h2>Tracking Pengiriman</h2>
+      <p>Masukkan Nomor Delivery Order (contoh: 20230012 atau 20230013).</p>
+    </section>
+
+    <section class="kotak-form" aria-labelledby="judulCari">
+      <h3 id="judulCari">Cari Pengiriman</h3>
+      <form id="formTracking" class="form-cari" novalidate>
+        <div>
+          <label for="nomorDO">Nomor Delivery Order</label>
+          <input type="text" id="nomorDO" placeholder="mis. 20230012">
+        </div>
+        <button type="submit" class="btn-utama">Cari</button>
+      </form>
+    </section>
+
+    <section id="hasilTracking" class="kotak-form" aria-live="polite" hidden>
+      <h3>Hasil Pencarian</h3>
+
+      <dl class="detail-list">
+        <div><dt>Nama Pemesan</dt><dd id="hNama"></dd></div>
+        <div><dt>Ekspedisi</dt><dd id="hEkspedisi"></dd></div>
+        <div><dt>Tanggal Kirim</dt><dd id="hTanggal"></dd></div>
+        <div><dt>Jenis Paket</dt><dd id="hPaket"></dd></div>
+        <div><dt>Total Pembayaran</dt><dd id="hTotal"></dd></div>
+        <div><dt>Status</dt><dd><span id="hStatus" class="badge-status"></span></dd></div>
+      </dl>
+
+      <div class="progress" role="progressbar" aria-label="Progress pengiriman"
+           aria-valuemin="0" aria-valuemax="100" id="progressWrap">
+        <div class="progress-isi" id="progressIsi"></div>
+      </div>
+      <ol class="tahap-list" id="tahapList"></ol>
+
+      <h4>Riwayat Perjalanan</h4>
+      <ol class="riwayat-list" id="riwayatList"></ol>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

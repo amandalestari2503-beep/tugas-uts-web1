@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="halaman-login">
+
+  <main class="kotak-login">
+    <header>
+      <h1>Toko Buku Online</h1>
+      <p>Silakan masuk untuk melanjutkan</p>
+    </header>
+
+    <form id="formLogin" novalidate>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="contoh@gmail.com">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Masukkan password">
+
+      <button type="submit" class="btn-utama">Login</button>
+    </form>
+
+    <div class="tombol-bawah">
+      <button type="button" id="btnLupa" class="btn-link">Lupa Password</button>
+      <button type="button" id="btnDaftar" class="btn-link">Daftar</button>
+    </div>
+  </main>
+
+  <!-- Modal Lupa Password -->
+  <div class="modal" id="modalLupa">
+    <div class="modal-isi">
+      <button type="button" class="modal-tutup" data-tutup="modalLupa">&times;</button>
+      <h2>Lupa Password</h2>
+      <form id="formLupa" novalidate>
+        <label for="emailLupa">Email terdaftar</label>
+        <input type="email" id="emailLupa" placeholder="contoh@gmail.com">
+        <button type="submit" class="btn-utama">Kirim Link Reset</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Daftar -->
+  <div class="modal" id="modalDaftar">
+    <div class="modal-isi">
+      <button type="button" class="modal-tutup" data-tutup="modalDaftar">&times;</button>
+      <h2>Daftar Akun Baru</h2>
+      <form id="formDaftar" novalidate>
+        <label for="namaDaftar">Nama lengkap</label>
+        <input type="text" id="namaDaftar">
+
+        <label for="emailDaftar">Email</label>
+        <input type="email" id="emailDaftar">
+
+        <label for="passwordDaftar">Password (min. 6 karakter)</label>
+        <input type="password" id="passwordDaftar">
+
+        <button type="submit" class="btn-utama">Daftar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Stok - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-atas">
+    <h1>Toko Buku Online</h1>
+    <a href="dashboard.html" class="btn-keluar">&larr; Dashboard</a>
+  </header>
+
+  <main class="konten">
+    <section class="sambutan">
+      <h2>Informasi Stok / Katalog</h2>
+      <p>Daftar buku yang tersedia. Stok di bawah 200 ditandai merah.</p>
+    </section>
+
+    <section class="kotak-form" aria-labelledby="judulTambah">
+      <h3 id="judulTambah">Tambah Stok Baru</h3>
+      <form id="formTambah" class="form-grid" novalidate>
+        <div>
+          <label for="kodeBarang">Kode Barang</label>
+          <input type="text" id="kodeBarang" placeholder="mis. EKMA4500">
+        </div>
+        <div>
+          <label for="namaBarang">Nama Barang</label>
+          <input type="text" id="namaBarang">
+        </div>
+        <div>
+          <label for="jenisBarang">Jenis</label>
+          <input type="text" id="jenisBarang" value="Buku Ajar">
+        </div>
+        <div>
+          <label for="edisi">Edisi</label>
+          <input type="number" id="edisi" min="1">
+        </div>
+        <div>
+          <label for="stok">Stok</label>
+          <input type="number" id="stok" min="0">
+        </div>
+        <div>
+          <label for="harga">Harga (angka)</label>
+          <input type="number" id="harga" min="1" placeholder="mis. 175000">
+        </div>
+        <div class="form-tombol">
+          <button type="submit" class="btn-utama">Tambah Stok</button>
+        </div>
+      </form>
+    </section>
+
+    <section aria-labelledby="judulTabel">
+      <h3 id="judulTabel">Daftar Katalog</h3>
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Kode</th>
+              <th>Nama Barang</th>
+              <th>Jenis</th>
+              <th>Edisi</th>
+              <th>Stok</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody id="tabelStok"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
